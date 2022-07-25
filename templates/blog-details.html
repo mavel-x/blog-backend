@@ -32,9 +32,9 @@
         <div class="col-lg-8">
           <div class="main_blog_details">
             {% if post.image_url %}
-            <img class="img-fluid" src="{{ post.image_url }}" alt="Post illustration">
+              <img class="img-fluid" src="{{ post.image_url }}" alt="Post illustration">
             {% else %}
-            <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Post illustration">
+              <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Post illustration">
             {% endif %}
             <h4>{{ post.title }}</h4>
             <div class="user_details">
@@ -66,22 +66,22 @@
             <h4>{{ post.comments|length }} comments</h4>
 
             {% for comment in post.comments %}
-            <div class="comment-list">
-              <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                  <div class="desc">
-                    <h5><a href="#">{{ comment.author }}</a></h5>
-                    <p class="date">{{ comment.published_at}}</p>
-                    <p class="comment">
-                      {{ comment.text }}
-                    </p>
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">{{ comment.author }}</a></h5>
+                      <p class="date">{{ comment.published_at}}</p>
+                      <p class="comment">
+                        {{ comment.text }}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                    <a href="" class="btn-reply text-uppercase">reply</a>
                   </div>
                 </div>
-                <div class="reply-btn">
-                  <a href="" class="btn-reply text-uppercase">reply</a>
-                </div>
               </div>
-            </div>
             {% endfor %}
 
           </div>
